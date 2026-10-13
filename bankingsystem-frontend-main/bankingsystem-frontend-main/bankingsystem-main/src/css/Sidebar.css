@@ -1,0 +1,673 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    background: linear-gradient(
+        180deg,
+        #0B4DB6,
+        #1565C0
+    );
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.12);
+
+    z-index: 1000;
+
+    transition: all 0.35s ease;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SIDEBAR TOP / LOGO
+========================================================= */
+
+.sidebar-top {
+    padding: 25px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-circle {
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 28px;
+}
+
+.sidebar-logo h2 {
+    color: white;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.sidebar-logo p {
+    color: #D6E8FF;
+
+    font-size: 13px;
+
+    margin-top: 3px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SIDEBAR MENU
+========================================================= */
+
+.sidebar-menu {
+    padding: 20px 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    flex: 1;
+
+    overflow-y: auto;
+}
+
+
+/* MENU ITEM */
+
+.menu-item {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px 18px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: all 0.3s ease;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+}
+
+.menu-item svg {
+    font-size: 20px;
+
+    min-width: 20px;
+}
+
+
+/* HOVER */
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+
+    transform: translateX(5px);
+}
+
+
+/* ACTIVE */
+
+.menu-item.active {
+    background: white;
+
+    color: #1565C0;
+
+    font-weight: 600;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   CONTACT BUTTON
+========================================================= */
+
+.contact-btn {
+    width: 100%;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.35s ease;
+}
+
+.contact-btn svg {
+    font-size: 18px;
+}
+
+.contact-btn:hover {
+    background: white;
+
+    color: #1565C0;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    padding: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   USER PROFILE CARD
+========================================================= */
+
+.user-card {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px 8px;
+
+    margin-bottom: 4px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   PROFILE AVATAR
+========================================================= */
+
+.profile-avatar {
+    width: 50px;
+    height: 50px;
+
+    min-width: 50px;
+    min-height: 50px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #42A5F5,
+        #1976D2
+    );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        0 4px 10px rgba(21, 101, 192, 0.30);
+
+    transition: all 0.3s ease;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 6px 15px rgba(21, 101, 192, 0.40);
+}
+
+
+/* =========================================================
+   USER DETAILS
+========================================================= */
+
+.user-card-details {
+    min-width: 0;
+
+    flex: 1;
+
+    overflow: hidden;
+}
+
+.user-card-details h3 {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    color: white;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.user-card-details p {
+    margin: 3px 0 0;
+
+    font-size: 12px;
+
+    color: #D8E6FF;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   LOGOUT BUTTON
+========================================================= */
+
+.logout-btn {
+    width: 100%;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #FF5252;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.35s ease;
+}
+
+.logout-btn svg {
+    font-size: 18px;
+
+    min-width: 18px;
+}
+
+.logout-btn:hover {
+    background: #E53935;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(229, 57, 53, 0.35);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+
+    top: 12px;
+    left: 12px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #1565C0;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 2000;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.overlay {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 999;
+}
+
+
+/* =========================================================
+   TABLET
+   769px - 992px
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .sidebar {
+        width: 78px;
+    }
+
+
+    /* Hide text but KEEP avatar */
+
+    .sidebar-logo h2,
+    .sidebar-logo p,
+    .menu-item span,
+    .user-card-details,
+    .logout-btn span {
+        display: none;
+    }
+
+
+    /* Logo */
+
+    .sidebar-logo {
+        justify-content: center;
+    }
+
+    .logo-circle {
+        margin: auto;
+    }
+
+
+    /* Menu */
+
+    .menu-item {
+        justify-content: center;
+
+        padding: 16px;
+    }
+
+    .menu-item svg {
+        font-size: 21px;
+    }
+
+
+    /* Contact */
+
+    .contact-btn {
+        padding: 0;
+    }
+
+
+    /* User */
+
+    .user-card {
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        padding: 10px 0;
+    }
+
+    .profile-avatar {
+        display: flex;
+    }
+
+
+    /* Logout */
+
+    .logout-btn {
+        padding: 0;
+    }
+
+    .logout-btn svg {
+        margin: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Show menu button */
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    /* Sidebar hidden */
+
+    .sidebar {
+        left: -240px;
+
+        width: 240px;
+
+        height: 100vh;
+
+        transition: left 0.35s ease;
+    }
+
+
+    /* Sidebar open */
+
+    .sidebar.active {
+        left: 0;
+    }
+
+
+    /* Restore everything inside mobile sidebar */
+
+    .sidebar-logo h2,
+    .sidebar-logo p,
+    .menu-item span,
+    .user-card-details,
+    .logout-btn span {
+        display: block;
+    }
+
+
+    /* Logo */
+
+    .sidebar-logo {
+        justify-content: flex-start;
+    }
+
+    .logo-circle {
+        margin: 0;
+    }
+
+
+    /* Menu */
+
+    .menu-item {
+        justify-content: flex-start;
+
+        padding: 14px 18px;
+    }
+
+
+    /* User profile */
+
+    .user-card {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        padding: 10px 8px;
+    }
+
+    .profile-avatar {
+        display: flex;
+
+        width: 50px;
+        height: 50px;
+
+        min-width: 50px;
+    }
+
+
+    /* Logout */
+
+    .logout-btn {
+        padding: 0;
+    }
+
+    .logout-btn span {
+        display: inline;
+    }
+
+
+    /* Overlay */
+
+    .overlay {
+        display: block;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   <= 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .sidebar {
+        width: 240px;
+    }
+
+    .sidebar-top {
+        padding: 20px;
+    }
+
+    .sidebar-menu {
+        padding: 15px 10px;
+    }
+
+    .sidebar-bottom {
+        padding: 15px;
+    }
+
+    .profile-avatar {
+        width: 46px;
+        height: 46px;
+
+        min-width: 46px;
+        min-height: 46px;
+
+        font-size: 16px;
+    }
+
+    .user-card-details h3 {
+        font-size: 15px;
+    }
+
+    .user-card-details p {
+        font-size: 11px;
+    }
+}

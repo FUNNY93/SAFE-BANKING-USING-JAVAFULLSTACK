@@ -1,0 +1,454 @@
+/* =====================================================
+   PROFILE PAGE
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+.profile-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f7fc;
+  
+  padding-left: 80PX;
+  padding-top: 60PX;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.profile-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   PROFILE HEADER
+===================================================== */
+
+.profile-header {
+  width: 100%;
+  background: linear-gradient(135deg, #1565c0, #42a5f5);
+  color: white;
+
+  padding: 30px 35px;
+
+  border-radius: 18px 18px 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+.profile-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.profile-header p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+
+/* =====================================================
+   PROFILE CARDS
+===================================================== */
+
+.profile-card {
+  width: 100%;
+  background: white;
+
+  padding: 30px 35px;
+
+  border-radius: 0 0 18px 18px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  margin-bottom: 25px;
+}
+
+.profile-card.pin-card {
+  border-radius: 18px;
+}
+
+
+/* =====================================================
+   CARD HEADINGS
+===================================================== */
+
+.profile-card h2 {
+  margin: 0 0 25px;
+
+  color: #1565c0;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pin-description {
+  margin-top: -12px;
+  margin-bottom: 20px;
+
+  color: #666;
+
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   PROFILE GRID
+===================================================== */
+
+.profile-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px 25px;
+}
+
+
+/* =====================================================
+   PROFILE FIELD
+===================================================== */
+
+.profile-field {
+  width: 100%;
+  min-width: 0;
+}
+
+.profile-field.full-width {
+  grid-column: 1 / -1;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.profile-field label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 8px;
+
+  color: #333;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   INPUT + TEXTAREA
+===================================================== */
+
+.profile-field input,
+.profile-field textarea {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  border: 1px solid #d8dee8;
+
+  border-radius: 10px;
+
+  background: #fff;
+
+  color: #222;
+
+  font-size: 15px;
+
+  font-family: inherit;
+
+  outline: none;
+
+  transition: all 0.2s ease;
+}
+
+.profile-field input {
+  height: 46px;
+}
+
+.profile-field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+
+/* =====================================================
+   INPUT FOCUS
+===================================================== */
+
+.profile-field input:focus,
+.profile-field textarea:focus {
+  border-color: #1565c0;
+
+  box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.1);
+}
+
+
+/* =====================================================
+   DISABLED INPUT
+===================================================== */
+
+.profile-field input:disabled {
+  background: #f3f5f8;
+
+  color: #555;
+
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+===================================================== */
+
+.save-btn,
+.pin-btn,
+.logout-btn {
+  border: none;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+
+/* SAVE */
+
+.save-btn {
+  margin-top: 25px;
+
+  padding: 13px 22px;
+
+  background: #1565c0;
+
+  color: white;
+}
+
+.save-btn:hover {
+  background: #0d47a1;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 15px rgba(21, 101, 192, 0.25);
+}
+
+
+/* =====================================================
+   PIN BUTTON
+===================================================== */
+
+.pin-btn {
+  margin-top: 25px;
+
+  padding: 13px 22px;
+
+  background: #ff9800;
+
+  color: white;
+}
+
+.pin-btn:hover {
+  background: #f57c00;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.25);
+}
+
+
+/* =====================================================
+   LOGOUT BUTTON
+===================================================== */
+
+.logout-btn {
+  padding: 11px 20px;
+
+  background: #e53935;
+
+  color: white;
+
+  white-space: nowrap;
+}
+
+.logout-btn:hover {
+  background: #c62828;
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.profile-loading {
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 20px;
+
+  color: #1565c0;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .profile-page {
+    padding: 25px 20px;
+  }
+
+  .profile-container {
+    max-width: 100%;
+  }
+
+  .profile-header {
+    padding: 25px;
+  }
+
+  .profile-card {
+    padding: 25px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .profile-page {
+    padding: 15px;
+  }
+
+  .profile-header {
+    padding: 22px 18px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    border-radius: 14px 14px 0 0;
+  }
+
+  .profile-header h1 {
+    font-size: 25px;
+  }
+
+  .profile-header p {
+    font-size: 13px;
+  }
+
+  .logout-btn {
+    width: 100%;
+  }
+
+  .profile-card {
+    padding: 22px 18px;
+
+    border-radius: 0 0 14px 14px;
+
+    margin-bottom: 18px;
+  }
+
+  .profile-card.pin-card {
+    border-radius: 14px;
+  }
+
+  .profile-card h2 {
+    font-size: 20px;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .profile-field.full-width {
+    grid-column: auto;
+  }
+
+  .save-btn,
+  .pin-btn {
+    width: 100%;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .profile-page {
+    padding: 10px;
+  }
+
+  .profile-header {
+    padding: 20px 15px;
+  }
+
+  .profile-header h1 {
+    font-size: 22px;
+  }
+
+  .profile-card {
+    padding: 18px 14px;
+  }
+
+  .profile-field input,
+  .profile-field textarea {
+    font-size: 14px;
+  }
+
+}
